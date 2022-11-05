@@ -1,9 +1,9 @@
 // Assignment code here
 
-// function that generates the random password based on desired criteria !!how do i prompt multiple times and save ??
+// Parent Generate Function
 function generatePassword () {
+  // Prompt and Confirm Popups to specify desired criteria
   var length = Number(prompt("Choose password length between 8(min) and 128(max) characters long."));
-  // var charType = alert("Choose character type: lowercase, uppercase, numeric, and/or special.");
   var hasLower = confirm("Do you want your password to contain lowercase characters?");
   var hasUpper = confirm("Do you want your password to contain uppercase characters?");
   var hasNumber = confirm("Do you want your password to contain numeric characters?");
@@ -15,50 +15,50 @@ function generatePassword () {
   var special = "!@#$%^&*()_+-=[]{}|;:";
   
   console.log(length);
-
   console.log(hasLower, hasUpper, hasNumber, hasSymbol);
   
+  // console logs number of true responses
   const typesCount = hasLower + hasUpper + hasNumber + hasSymbol;
-  
   console.log('Types Count ', typesCount);
   
+  // Filters out any false responses and console logs the types Array
   const typesArr = [{ hasLower }, { hasUpper }, { hasNumber }, { hasSymbol }].filter
   (
   item => Object.values(item)[0]
   ); 
-
   console.log('typesArr', typesArr);
   
+  // If all responses are false then the Password generator retuns nothing
   if (typesCount === 0) {
     return '';
   };
 
   var password = '';
   
-  var criteria = "";
-  // If statements to add Characters to criteria string
+  var criteria = '';
+  // if/else statements to add Character content to criteria string
   if( hasLower == true) {
     criteria += lowercase;
   } else{
-    criteria += "";
+    criteria += '';
   };
 
   if( hasUpper == true) {
     criteria += uppercase;
   } else {
-    criteria += "";
+    criteria += '';
   };
 
   if( hasNumber == true) {
     criteria += numeric;
   } else{
-    criteria += "";
+    criteria += '';
   };
 
   if( hasSymbol == true) {
     criteria += special;
   } else{
-    criteria += "";
+    criteria += '';
   };
 
   console.log("criteria ", criteria);
