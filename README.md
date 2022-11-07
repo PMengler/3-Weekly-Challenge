@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator
 DESCRIPTION: write javascript code to generate a random password that meets the acceptance criteria
 
 The password generator web application was created by applying the tools we learned this past week in class
